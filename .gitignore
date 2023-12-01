@@ -1,0 +1,11 @@
+### Advent of Code ###
+##
+## Ignore Visual Studio files.
+## Keep folder structure, source code, and input files only.
+
+# Visual Studio cache, config, etc.
+.vs/
+
+# Files for solution and projects
+*.sln
+*.vcxproj*
