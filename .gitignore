@@ -9,3 +9,7 @@
 # Files for solution and projects
 *.sln
 *.vcxproj*
+
+#Build results
+x64/
+*/x64/
