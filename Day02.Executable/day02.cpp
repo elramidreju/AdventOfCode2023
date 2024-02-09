@@ -108,5 +108,6 @@ int main()
 	}
 
 	CubeConundrum conundrum(allGames);
-	cout << "Cube Conundrum Score = " << conundrum.Score();
+	cout << "Cube Conundrum Score = " << conundrum.Score() << "\n";
+	cout << "Cube Conundrum Power = " << conundrum.Power() << endl;
 }

@@ -20,4 +20,5 @@ public:
 
 	int id;
 	bool IsPossible();
+	int Power();
 };

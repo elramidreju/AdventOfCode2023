@@ -12,3 +12,15 @@ int CubeConundrum::Score()
 
     return result;
 }
+
+int CubeConundrum::Power()
+{
+    int result = 0;
+
+    for (auto game : allGames)
+    {
+        result += game.Power();
+    }
+
+    return result;
+}

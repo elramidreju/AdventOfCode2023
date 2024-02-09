@@ -10,4 +10,5 @@ public:
         :allGames(allGames){}
 
     int Score();
+    int Power();
 };
