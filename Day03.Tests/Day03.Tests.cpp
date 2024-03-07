@@ -13,7 +13,16 @@ static class qweda
 public:
 	static std::vector<Position> AdjacentTo(Position aPosition)
 	{
-		return std::vector<Position>(8);
+		return std::vector<Position> { 
+			Position(0, 1),
+			Position(0, 1),
+			Position(0, 1),
+			Position(0, 1),
+			Position(0, 1),
+			Position(0, 1),
+			Position(0, 1),
+			Position(0, 1),
+		};
 	}
 };
 
@@ -50,10 +59,9 @@ namespace Day03Tests
 			Assert::IsTrue(qweda::AdjacentTo(Position(0, 0)).size() == 8);
 		}
 
-		TEST_METHOD(asfasfs)
+		TEST_METHOD(ContainsAdjacentPosition)
 		{
-			Position expected = Position(0, 1);
-			Assert::IsTrue(ContainsIn(qweda::AdjacentTo(Position(0, 0)), Position(0,1)));
+			Assert::IsTrue(ContainsIn(qweda::AdjacentTo(Position(0, 0)), Position(0, 1)));
 		}
 	};
 
