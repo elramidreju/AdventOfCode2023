@@ -7,7 +7,7 @@
 .vs/
 
 # Files for solution and projects
-*.sln
+#*.sln
 *.vcxproj*
 
 #Build results
