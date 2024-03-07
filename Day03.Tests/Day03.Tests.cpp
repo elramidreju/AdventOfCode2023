@@ -73,10 +73,15 @@ namespace Day03Tests
             Assert::IsTrue(ContainsIn(qweda::AdjacentTo(Position(6, 5)), Position(7, 6)));
         }
 
-        TEST_METHOD(asdfasfasfasfs)
+        TEST_METHOD(SingleDigitNumber_IsPartNumber)
         {
             Assert::IsTrue(IsPartNumber(std::tuple<Position, int>(Position(0, 0), 5), Position(1, 0)));
             Assert::IsFalse(IsPartNumber(std::tuple<Position, int>(Position(43, 20), 5), Position(1, 0)));
+        }
+
+        TEST_METHOD(MultipleDigitNumber_IsPartNumber)
+        {
+            Assert::IsTrue(IsPartNumber(std::tuple<Position, int>(Position(0, 0), 53), Position(2, 0)));
         }
     };
 
