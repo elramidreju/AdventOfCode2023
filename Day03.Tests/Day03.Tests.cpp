@@ -28,6 +28,22 @@ public:
     }
 };
 
+bool ContainsIn(std::vector<Position> from, Position whichOne)
+{
+    for (auto position : from)
+    {
+        if (position == whichOne)
+            return true;
+    }
+
+    return false;
+}
+
+bool IsPartNumber(std::tuple<Position, int> candidate, Position whereASymbolIs)
+{
+    return ContainsIn(qweda::AdjacentTo(std::get<0>(candidate)), whereASymbolIs);
+}
+
 namespace Day03Tests
 {
     TEST_CLASS(Day03Tests)
@@ -44,17 +60,6 @@ namespace Day03Tests
         // - ¿Qué es ser adyacente?
         // -- Es estar en una casilla contigua vertical, horizontal o diagonalmente (1 unidad de distancia)
 
-        bool ContainsIn(std::vector<Position> from, Position whichOne)
-        {
-            for (auto position : from)
-            {
-                if (position == whichOne)
-                    return true;
-            }
-
-            return false;
-        }
-
         TEST_METHOD(AdjacentPosition)
         {
             Position expected = Position(0, 1);
@@ -66,6 +71,12 @@ namespace Day03Tests
             Assert::IsTrue(ContainsIn(qweda::AdjacentTo(Position(0, 0)), Position(0, 1)));
             Assert::IsTrue(ContainsIn(qweda::AdjacentTo(Position(4, 4)), Position(3, 4)));
             Assert::IsTrue(ContainsIn(qweda::AdjacentTo(Position(6, 5)), Position(7, 6)));
+        }
+
+        TEST_METHOD(asdfasfasfasfs)
+        {
+            Assert::IsTrue(IsPartNumber(std::tuple<Position, int>(Position(0, 0), 5), Position(1, 0)));
+            Assert::IsFalse(IsPartNumber(std::tuple<Position, int>(Position(43, 20), 5), Position(1, 0)));
         }
     };
 
