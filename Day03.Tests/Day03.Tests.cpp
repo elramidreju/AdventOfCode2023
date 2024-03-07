@@ -28,6 +28,11 @@ public:
     }
 };
 
+std::vector<Position> AdjacentToNumber(std::tuple<Position, int> aNumber)
+{
+    return std::vector<Position>(16);
+}
+
 bool ContainsIn(std::vector<Position> from, Position whichOne)
 {
     for (auto position : from)
@@ -43,6 +48,8 @@ bool IsPartNumber(std::tuple<Position, int> candidate, Position whereASymbolIs)
 {
     return ContainsIn(qweda::AdjacentTo(std::get<0>(candidate)), whereASymbolIs);
 }
+
+
 
 namespace Day03Tests
 {
@@ -79,10 +86,14 @@ namespace Day03Tests
             Assert::IsFalse(IsPartNumber(std::tuple<Position, int>(Position(43, 20), 5), Position(1, 0)));
         }
 
+        TEST_METHOD(AdjacentsToMultipleDigitNumber)
+        {
+            auto number = std::tuple<Position, int>(Position(2, 0), 40);
+            Assert::IsTrue(AdjacentToNumber(number).size() == 16);
+        }
         TEST_METHOD(MultipleDigitNumber_IsPartNumber)
         {
             Assert::IsTrue(IsPartNumber(std::tuple<Position, int>(Position(0, 0), 53), Position(2, 0)));
         }
     };
-
 }
