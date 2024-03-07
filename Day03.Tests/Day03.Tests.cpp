@@ -33,12 +33,28 @@ namespace Day03Tests
 		// - ¿Qué es ser adyacente?
 		// -- Es estar en una casilla contigua vertical, horizontal o diagonalmente (1 unidad de distancia)
 
+		bool ContainsIn(std::vector<Position> from, Position whichOne)
+		{
+			for (auto position : from)
+			{
+				if (position == whichOne)
+					return true;
+			}
+
+			return false;
+		}
+
 		TEST_METHOD(AdjacentPosition)
 		{
 			Position expected = Position(0, 1);
 			Assert::IsTrue(qweda::AdjacentTo(Position(0, 0)).size() == 8);
 		}
 
+		TEST_METHOD(asfasfs)
+		{
+			Position expected = Position(0, 1);
+			Assert::IsTrue(ContainsIn(qweda::AdjacentTo(Position(0, 0)), Position(0,1)));
+		}
 	};
 
 }
